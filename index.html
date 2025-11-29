@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 互动小说生成器 - 你的故事，你做主</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ AI 互动小说生成器</h1>
+            <p class="subtitle">每一次选择，都将开启一段独特的冒险</p>
+        </header>
+
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h2>欢迎来到无限可能的故事世界</h2>
+                <p>在这里，你不仅是读者，更是故事的创造者。AI 将根据你的选择，为你编织一个独一无二的冒险故事。</p>
+                
+                <div class="genre-selection">
+                    <h3>选择你的故事类型：</h3>
+                    <div class="genre-buttons">
+                        <button class="genre-btn" data-genre="科幻">🚀 科幻冒险</button>
+                        <button class="genre-btn" data-genre="奇幻">🧙 奇幻世界</button>
+                        <button class="genre-btn" data-genre="悬疑">🔍 悬疑推理</button>
+                        <button class="genre-btn" data-genre="浪漫">💕 浪漫爱情</button>
+                        <button class="genre-btn" data-genre="恐怖">👻 恐怖惊悚</button>
+                        <button class="genre-btn" data-genre="武侠">⚔️ 武侠江湖</button>
+                    </div>
+                </div>
+
+                <div class="custom-start">
+                    <h3>或者，自定义你的开局：</h3>
+                    <textarea id="custom-prompt" placeholder="例如：我是一名太空探险家，刚刚降落在一颗未知星球上..."></textarea>
+                    <button id="start-custom" class="btn-primary">开始自定义故事</button>
+                </div>
+
+                <div class="api-key-section">
+                    <h3>⚙️ API 配置</h3>
+                    <p class="api-hint">请输入你的 OpenAI API Key 以开始使用（数据仅保存在本地浏览器）</p>
+                    <input type="password" id="api-key-input" placeholder="sk-...">
+                    <button id="save-api-key" class="btn-secondary">保存 API Key</button>
+                    <p id="api-status" class="api-status"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="story-screen" class="screen">
+            <div class="story-container">
+                <div class="story-header">
+                    <button id="restart-btn" class="btn-secondary">🔄 重新开始</button>
+                    <div class="story-info">
+                        <span id="story-genre" class="genre-tag"></span>
+                        <span id="chapter-count" class="chapter-count">第 1 章</span>
+                    </div>
+                </div>
+
+                <div id="story-content" class="story-content">
+                    <!-- 故事内容将动态添加 -->
+                </div>
+
+                <div id="choices-container" class="choices-container">
+                    <!-- 选择按钮将动态添加 -->
+                </div>
+
+                <div id="loading" class="loading hidden">
+                    <div class="loading-spinner"></div>
+                    <p>AI 正在编织你的故事...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>由 AI 驱动 | 每个故事都是独一无二的创作</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
